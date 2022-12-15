@@ -10,7 +10,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>student - SB Admin</title>
+        <title>Course - sb admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -53,6 +53,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+                       
                       
 
                             <a class="nav-link collapsed" href="./teacher.php" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -90,9 +91,12 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                             </a>
                             <a class="nav-link" href="contact.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                               Contact
+                              Contact
                             </a>
-                           
+                            <a class="nav-link" href="Testimonial.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Testimonial
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -102,33 +106,33 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                 </nav>
             </div>
           
-
-            <div id="layoutSidenav_content">
+     
+        
+<div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">STUDENTS</h1>
+                <div class="container-fluid px-4">
+                        <h1 class="mt-4">COURSE</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">student</li>
+                            <li class="breadcrumb-item active">course</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                                This page is an example of using the light side navigation option. By appending the
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque.
                                 <code>.sb-sidenav-light</code>
                                 class to the
                                 <code>.sb-sidenav</code>
-                                class, the side navigation will take on a light color scheme. The
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque.
                                 <code>.sb-sidenav-dark</code>
-                                is also available for a darker option.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque.
                             </div>
                         </div>
-                        <a class="btn btn-primary" href="./studentADDpage.php" role="button">Add New Student</a>
+                        <a class="btn btn-primary" href="./courseADDpage.php" role="button">Add New Course</a>
 <br>
 <br>
 <br>
-                   
                     </div>
-                    <div class="card mb-4">
+            <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
@@ -138,67 +142,73 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                     <thead>
                                         <tr>
                                         <th>id</th>
-                                            <th>Name</th>
-                                            <th>Age</th>
-                                            <th>Add</th>
-                                              <th>course</th>
-                                            <th>Email</th>
+                                            <th>course Name</th>
+                                            <th>course price</th>
+                                              <th>lectures</th>
+                                            <th>duration</th>
+                                            <th>instructor</th>
                                             <th>image</th>
-                                      
-
                                            
                                         
                                         </tr>
                                     </thead>
+
+
+                                    
                                     <tfoot>
                                         <tr>
                                         <th>id</th>
-                                            <th>Name</th>
-                                            <th>Age</th>
-                                            <th>Add</th>
-                                              <th>course</th>
-                                            <th>Email</th>
+                                            <th>course Name</th>
+                                            <th>course price</th>
+                                              <th>lectures</th>
+                                            <th>duration</th>
+                                            <th>instructor</th>
                                             <th>image</th>
                                            
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                     
-                                    <?php
-                                      $query="SELECT * from `student`";
-                                       $result = mysqli_query($conn,$query);
-                                       if(mysqli_num_rows($result)){
-                                       
-                                     while ($row = mysqli_fetch_array($result)){
-                                       ?>
-                                   
-                                       <tr>
+ <?php
+   $query="SELECT * from `course`";
+    $result = mysqli_query($conn,$query);
+    if(mysqli_num_rows($result)){
+    
+  while ($row = mysqli_fetch_array($result)){
+    ?>
+
+<tr>
                                          <td><?php echo $row[0] ?></td>
                                          <td><?php echo $row[1] ?></td>
                                          <td><?php echo $row[2] ?></td>
                                          <td><?php echo $row[3] ?></td>
                                          <td><?php echo $row[4] ?></td>
                                          <td><?php echo $row[5] ?></td>
-                                         <td><img src ="./images/<?php echo $row[3];?>" width="90px"></td>
-                                         
-                                         <td> <a  href ="edit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td> 
-                                        
-                                         <td> <a  href ="remove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td> 
+                                         <td><?php echo $row[6] ?></td>
+                                      
+                                         <td><img src ="" width="90px"></td>
+                                         <td> <a  href ="cedit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td>
+                                         <td> <a  href ="cremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td>
                                        </tr>
-                                       
-                                       <?php
-                                      } }
-                                     ?>
-                                       
-                                                                       </tbody>
+    
+    <?php
+   } }
+  ?>
+    
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
+
+
+                   
                 </main>
+                
                 </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
+         
+
+        <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2022</div>
@@ -212,6 +222,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                 </footer>
             </div>
         </div>
+     
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
@@ -222,3 +233,4 @@ $conn = mysqli_connect("localhost","root","","ecourse");
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
+

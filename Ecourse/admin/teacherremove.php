@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "teacher"); 
+$conn = mysqli_connect("localhost", "root", "", "ecourse"); 
 
 if (!$conn) {
     echo "connection refuse";
@@ -11,7 +11,7 @@ else {
 
     $id = $_GET["id"];
 
-    $query = "DELETE FROM `user` WHERE `id` = $id";
+    $query = "DELETE FROM `teacher` WHERE `id` = $id";
 
     mysqli_query($conn,$query);
 

@@ -1,12 +1,16 @@
-<!DOCTYPE php>
-<php lang="en">
+<?php
+$conn = mysqli_connect("localhost","root","","ecourse");
+
+?>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Teacher table - SB Admin</title>
+        <title>Teacher - sb admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -14,7 +18,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.php">E-courses Website</a>
+            <a class="navbar-brand ps-3" href="index.php">Education Systems</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -37,79 +41,160 @@
                 </li>
             </ul>
         </nav>
+        <br>
+                       <br>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                        
                             <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                               Teacher
-                            </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                               Students
-                            </a>
+                       
+                      
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <a class="nav-link collapsed" href="./teacher.php" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                              Teacher
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="./teacher.php">Teacher</a>
+                                  
+                                </nav>
+                            </div>
+                          
+                            <a class="nav-link collapsed" href="./student.php" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                               Courses
+                         Student
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link" href="charts.php">
+                            
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link" href="./student.php">STUDENTS</a>
+                                    </nav>
+                                </div>
+                                    
+                                  
+                            <a class="nav-link" href="course.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Testimonial
+                                COURSE
                             </a>
+                            <a class="nav-link" href="tables.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                            <a class="nav-link" href="contact.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                              Contact
+                            </a>
+                           
                         </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
                     </div>
                 </nav>
             </div>
-            <div id="layoutSidenav_content">
+          
+     
+        
+<div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Teacher Table</h1>
+                        <h1 class="mt-4">Teachers</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Teachers</li>
+                        </ol>
                         <div class="card mb-4">
+                            <div class="card-body">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque.
+                                <code>.sb-sidenav-light</code>
+                                class to the
+                                <code>.sb-sidenav</code>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque.
+                                <code>.sb-sidenav-dark</code>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque.
+                            </div>
+                        </div>
+                        <a class="btn btn-primary" href="./addteacher.php" role="button">Add New Teacher</a>
+<br>
+<br>
+<br>
+                    </div>
+            <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                DataTable Example
+                            </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
-                                            <th>name</th>
-                                            <th>subject</th>
-                                            <th>image</th>
+                                        <th>id</th>
+                                            <th>Name</th>
+                                              <th>subject</th>
+                                              <th>image</th>
+                                           
+                                              <th>Action</th>
                                         </tr>
                                     </thead>
+
+
+
                                     <tfoot>
                                         <tr>
-                                            <th>id</th>
-                                            <th>name</th>
-                                            <th>subject</th>
-                                            <th>image</th>
+                                        <th>id</th>
+                                            <th>Name</th>
+                                              <th>subject</th>
+                                              <th>image</th>
+                                              <th>Action</th>
+                                        <th>Action</th>
                                         </tr>
                                     </tfoot>
+                                    <tbody>
+                                    
+ <?php
+  include('include/config.php');
+   $query="SELECT * from `teacher`";
+    $result = mysqli_query($conn,$query);
+    if(mysqli_num_rows($result)){
+    
+  while ($row = mysqli_fetch_array($result)){
+    ?>
+
+    <tr>
+    <td><?= $row['id'] ?></td>
+    <td><?= $row['name'] ?></td>
+    <td><?= $row['subject'] ?></td>
+    <td><img src="images/<?= $row['image'] ?>" width="100px" height="100px" alt=""></td>
+     
+      <td> <a  href ="editeacher.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td> 
+     <td> <a  href ="Teacherremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td> 
+    </tr>
+    
+    <?php
+   } }
+  ?>
+    
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
+                </div>
+        </div> 
+
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -118,4 +203,5 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
-</php>
+</html>
+

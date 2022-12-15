@@ -1,8 +1,3 @@
-<?php
-$conn = mysqli_connect("localhost","root","","ecourse");
-
-?>
-
 <!DOCTYPE php>
 <php lang="en">
     <head>
@@ -11,7 +6,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Student table - SB Admin</title>
+        <title>Testimonial - SB Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -73,77 +68,33 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                     </div>
                 </nav>
             </div>
+            <div id="layoutSidenav_content">  
+                <main style="border:solid 2px; width:60%; margin-left:15%; margin-top:10%;">
+                <h1 style="text-align:center;">Add Teacher</h1> 
+                <br>         
 
-            
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Courses Details</h1>
-                        <br>
-                        <a class="btn btn-primary" href="./addcourse.php" role="button">Add New</a>
-<br><br> 
-                        <div class="card mb-4">
-                        <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                        <th>id</th>
-                                        <th>Course Name</th>
-                                        <th>Instructor</th>
-                                        <th>Lecture</th>
-                                        <th>Duration</th>
-                                        <th>Language</th>  
-                                        <th>Price</th>                                      
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                        <th>id</th>
-                                        <th>Course Name</th>
-                                        <th>Instructor</th>
-                                        <th>Lecture</th>
-                                        <th>Duration</th>
-                                        <th>Language</th>  
-                                        <th>Price</th>                                      
+                <form action="teacherinsert.php" method="POST" enctype="multipart/form-data" style="margin-left:2%; margin-right:2%;">
+        <div class="form-group">
+            <label for="colFormLabel">Name</label>
+            <input type="text" name ="name" class="form-control" id="colFormLabel" placeholder="Enter Teacher name">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="colFormLabel">Subject</label>
+          <input type="text" name="subject" class="form-control" id="colFormLabel" placeholder="Enter subject">
+        </div>
+        <br>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Example file input</label>
+                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <br>
+        <input type="submit" class="btn btn-primary" value="submit"> 
+    </form>
+</div>
+    
 
-                                        </tr>
-                                      </tfoot>
-                                      
-                                   <tbody>
-                                    
-                                    <?php
-                                      $query="SELECT * from `course`";
-                                       $result = mysqli_query($conn,$query);
-                                       if(mysqli_num_rows($result)){
-                                       
-                                     while ($row = mysqli_fetch_array($result)){
-                                       ?>
-                                   
-                                       <tr>
-                                         <td><?php echo $row[0] ?></td>
-                                         <td><?php echo $row[1] ?></td>
-                                         <td><?php echo $row[2] ?></td>
-                                         <td><?php echo $row[3] ?></td>
-                                         <td><?php echo $row[4] ?></td>
-                                         <td><?php echo $row[5] ?></td>
-                                         <td><?php echo $row[6] ?></td>
 
-                                         
-                                         <td> <a  href ="edit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td> 
-                                        
-                                         <td> <a  href ="courseremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td> 
-                                       </tr>
-                                       
-                                    <?php
-                                      } }
-                                     ?>
-                                       
-                                                                      
-                                   </tbody>
-                                </table>
-                            </div>
-
-                        </div>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
@@ -169,3 +120,33 @@ $conn = mysqli_connect("localhost","root","","ecourse");
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </php>
+                         
+<!-- // error_reporting(0);
+
+// $name=$_POST['txtname'];
+// $subject=$_POST['txtsubject'];
+// $imagename= $_FILES['image'] ["name"];
+// $imgtmp = $_FILES['img']['tmp_name'];
+
+// $path = "./images/". $imagename;
+
+// move_uploaded_file($imgtmp,$path);
+
+// $conn = mysqli_connect("localhost","root","","ecourse");
+// if(!$conn){
+//     echo "connection refuse";
+// }
+// $query ="INSERT INTO `teacher`(`id`,`name`,`subject`,`image`) VALUES ('null','$name','$subject','$imagename')";
+
+// $q= mysqli_query($conn,$query);
+
+
+// if(!$q){
+//     echo "query not exectired!";
+// }
+// else{
+//     echo "query sucess!";
+// }
+
+
+// header('Location:showdata.php'); -->
