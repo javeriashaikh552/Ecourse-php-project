@@ -1,0 +1,34 @@
+     STUDENT
+1.id
+2.name
+3.age
+4.add
+5.course
+6.email
+7.image
+
+
+    TEACHER
+1.id
+2.name
+3.course
+4.image
+
+
+   COURSE
+1.id
+2.course name
+3.instructor
+4.rating
+5.lectures
+6.duration
+7.skill level
+8.language
+9.course price
+
+  Testimonial
+1.id
+2.course name
+3.student name
+4.description
+5.image

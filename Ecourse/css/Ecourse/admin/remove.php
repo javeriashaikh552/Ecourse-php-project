@@ -1,0 +1,46 @@
+<?php
+$conn = mysqli_connect("localhost", "root", "", "student"); 
+
+if (!$conn) {
+    echo "connection refuse";
+}
+else {
+    echo "connection established";
+}
+
+
+    $id = $_GET["id"];
+
+    $query = "DELETE FROM `student` WHERE `id` = $id";
+
+    mysqli_query($conn,$query);
+
+    // header("location: showData.php");   
+
+?>
+
+<script>
+    window.location.assign("student.php");
+</script>
+
+
+
+
+
+<!-- $conn = mysqli_connect("localhost", "root", "", "formhandling"); 
+if (!$conn) {
+    echo "connection refuse";
+}
+else {
+    echo "connection established";
+}
+    $id = $_GET["id"];
+    $query = "DELETE FROM `userdetails` WHERE `id` = $id";
+    mysqli_query($conn,$query);
+    // header("Location: showData.php");    -->
+
+
+
+<!-- <script>
+    window.location.assign("showData.php");
+</script> -->
