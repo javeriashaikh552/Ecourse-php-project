@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "ecourse"); 
+$conn = mysqli_connect("localhost", "root", "","ecourse"); 
 
 if (!$conn) {
     echo "connection refuse";
