@@ -181,7 +181,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                          <td><?php echo $row[5] ?></td>
                                          <td><img src ="./images/<?php echo $row[3];?>" width="90px"></td>
                                          
-                                         <td> <a  href ="edit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td> 
+                                         <td> <a  href ="studentedit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td> 
                                         
                                          <td> <a  href ="remove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td> 
                                        </tr>

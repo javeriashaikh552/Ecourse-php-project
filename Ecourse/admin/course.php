@@ -127,7 +127,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque.
                             </div>
                         </div>
-                        <a class="btn btn-primary" href="./courseADDpage.php" role="button">Add New Course</a>
+                        <a class="btn btn-primary" href="./addcourse.php" role="button">Add New Course</a>
 <br>
 <br>
 <br>
@@ -148,6 +148,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                             <th>duration</th>
                                             <th>instructor</th>
                                             <th>image</th>
+                                
                                            
                                         
                                         </tr>
@@ -164,6 +165,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                             <th>duration</th>
                                             <th>instructor</th>
                                             <th>image</th>
+                                            
                                            
                                         </tr>
                                     </tfoot>
@@ -177,18 +179,19 @@ $conn = mysqli_connect("localhost","root","","ecourse");
   while ($row = mysqli_fetch_array($result)){
     ?>
 
-<tr>
-                                         <td><?php echo $row[0] ?></td>
-                                         <td><?php echo $row[1] ?></td>
-                                         <td><?php echo $row[2] ?></td>
-                                         <td><?php echo $row[3] ?></td>
-                                         <td><?php echo $row[4] ?></td>
-                                         <td><?php echo $row[5] ?></td>
-                                         <td><?php echo $row[6] ?></td>
+<tr>  <td><?= $row['id'] ?></td>
+    <td><?= $row['coursename'] ?></td>
+    <td><?= $row['course price'] ?></td>
+    <td><?= $row['lectures'] ?></td>
+   <td><?= $row['duration'] ?></td>
+   <td><?=$row['instructor'] ?></td>
+ 
+    <td><img src="images/<?= $row['image'] ?>" width="100px" height="100px" alt=""></td>
+                                       
                                       
-                                         <td><img src ="" width="90px"></td>
-                                         <td> <a  href ="cedit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td>
-                                         <td> <a  href ="cremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td>
+            
+                                         <td> <a  href ="courseedit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td>
+                                         <td> <a  href ="courseremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td>
                                        </tr>
     
     <?php
