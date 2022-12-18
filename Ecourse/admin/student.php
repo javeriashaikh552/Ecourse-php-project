@@ -122,7 +122,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                 is also available for a darker option.
                             </div>
                         </div>
-                        <a class="btn btn-primary" href="./studentADDpage.php" role="button">Add New Student</a>
+                        <a class="btn btn-primary" href="./addstudent.php" role="button">Add New Student</a>
 <br>
 <br>
 <br>
@@ -143,7 +143,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                             <th>Add</th>
                                               <th>course</th>
                                             <th>Email</th>
-                                            <th>image</th>
+                                            <!-- <th>image</th> -->
                                       
 
                                            
@@ -158,7 +158,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                             <th>Add</th>
                                               <th>course</th>
                                             <th>Email</th>
-                                            <th>image</th>
+                                            <!-- <th>image</th> -->
                                            
                                         </tr>
                                     </tfoot>
@@ -179,7 +179,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                          <td><?php echo $row[3] ?></td>
                                          <td><?php echo $row[4] ?></td>
                                          <td><?php echo $row[5] ?></td>
-                                         <td><img src ="./images/<?php echo $row[3];?>" width="90px"></td>
+                                         <!-- <td><img src ="./images/<?php echo $row[3];?>" width="90px"></td> -->
                                          
                                          <td> <a  href ="studentedit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td> 
                                         

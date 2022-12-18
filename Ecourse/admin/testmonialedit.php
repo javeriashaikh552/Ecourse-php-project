@@ -2,7 +2,7 @@
  $conn = mysqli_connect("localhost","root","","ecourse");         //hostname username password databasename
  if(!$conn) {
      echo "connection refuse!";
-     header('Location:teacher.php');
+     header('Location:testimonial.php');
  } 
  else {
      echo "connection established!";
@@ -10,7 +10,7 @@
 
 
      $id = $_GET['id'];
-     $row = mysqli_fetch_assoc(mysqli_query($conn,"select * from teacher where id='$id'"));
+     $row = mysqli_fetch_assoc(mysqli_query($conn,"select * from testmonial1 where id='$id'"));
 
 
     //  header('Location:showData.php');
@@ -37,7 +37,7 @@
 
 <div class="container card card-body">
     <h1>Form edit</h1>
-    <form action="updateteacher.php" method="post">
+    <form action="testmonialupdate.php" method="post">
             <div class="form-group row">
             <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">ID</label>
                 <div class="col-sm-10">
@@ -49,9 +49,9 @@
                 </div>
                
                
-                <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">subject</label>
+                <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">description</label>
                 <div class="col-sm-10">
-                    <input type="subject"  value="<?= $row['subject'] ?>" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter your subject" name="subject">
+                    <input type="text"  value="<?= $row['description'] ?>" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter your description " name="description">
                 </div>
                 <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">image</label>
                 <div class="col-sm-10">
@@ -64,7 +64,7 @@
         </form>
 
 
-        <a href="./teacher.php">showdata</a>
+        <a href="./testimonial.php">showdata</a>
        
     </div>
     

@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","","student");
+$conn = mysqli_connect("localhost","root","","ecourse");
 
 ?>
 
@@ -115,8 +115,17 @@ $conn = mysqli_connect("localhost","root","","student");
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">Teacher</div>
+                                    <span>
+                                      <?php
+                                    $query="SELECT COUNT(*) AS 'count' FROM 'teacher'";
+                                    $result = mysqli_query($conn,$query);
+                                    $row = mysqli_fetch_assoc($result);
+                                    echo $count = $row['count'];
+                                    ?>
+                                    </span>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="teacher.php">View Details</a>
+                                     
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -192,7 +201,7 @@ $conn = mysqli_connect("localhost","root","","student");
                                         <th>id</th>
                                             <th>Name</th>
                                             <th>email</th>
-                                              <th>subject</th>
+                                              <th>course</th>
                                              
                                            
                                         
@@ -206,14 +215,14 @@ $conn = mysqli_connect("localhost","root","","student");
                                         <th>id</th>
                                             <th>Name</th>
                                             <th>email</th>
-                                              <th>subject</th>
+                                              <th>course</th>
                                             
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                     
  <?php
-   $query="SELECT * from `user`";
+   $query="SELECT * from `index`";
     $result = mysqli_query($conn,$query);
     if(mysqli_num_rows($result)){
     
@@ -225,10 +234,9 @@ $conn = mysqli_connect("localhost","root","","student");
       <td><?php echo $row[1] ?></td>
       <td><?php echo $row[2] ?></td>
       <td><?php echo $row[3] ?></td>
-     <td><img src ="./images/<?php echo $row[4];?>" width="100px"></td>
      
-      <td> <a  href ="TEACHEREDIT.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td> 
-     <td> <a  href ="Tremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td> 
+      <td> <a  href ="?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td> 
+     <td> <a  href ="indexremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td> 
     </tr>
     
     <?php

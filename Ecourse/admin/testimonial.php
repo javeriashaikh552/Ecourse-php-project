@@ -84,7 +84,7 @@
                                         <th>name</th>
                                         <th>description</th>
                                         <th>image</th>
-                                        <th>Action</th>
+                                      
 
                                         </tr>
                                     </thead>
@@ -94,32 +94,37 @@
                                         <th>name</th>
                                         <th>description</th>
                                         <th>image</th>
-                                        <th>Action</th>
-                                        <th>Action</th>
+                                       
 
                                         </tr>
                                     </tfoot>
 
-                                    <tbody>
-
-
-<?php
+                                    <?php
   include('include/config.php');
-  $q = mysqli_query($conn,"select * from testmonial1");
-  while ($row = mysqli_fetch_assoc($q)) {
-  ?>
+   $query="SELECT * from `testmonial1`";
+    $result = mysqli_query($conn,$query);
+    if(mysqli_num_rows($result)){
+    
+  while ($row = mysqli_fetch_array($result)){
+    ?>
 
-  <tr>
+    <tr>
     <td><?= $row['id'] ?></td>
     <td><?= $row['name'] ?></td>
     <td><?= $row['description'] ?></td>
     <td><img src="images/<?= $row['image'] ?>" width="100px" height="100px" alt=""></td>
-    <td><a href="edit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a> <br><a href="remove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td>
-  </tr>
-  
-  <?php
-  }
-?>
+     
+      <td> <a  href ="testmonialedit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td> 
+     <td> <a  href ="testmonialremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td> 
+    </tr>
+    
+    <?php
+   } }
+  ?>
+                              <tbody>
+
+
+
   
 </tbody>
 

@@ -172,27 +172,25 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                     <tbody>
                                     
  <?php
+ include('include/config.php');
    $query="SELECT * from `course`";
-    $result = mysqli_query($conn,$query);
-    if(mysqli_num_rows($result)){
-    
-  while ($row = mysqli_fetch_array($result)){
+   $result = mysqli_query($conn,$query);
+   if(mysqli_num_rows($result)){
+   
+ while ($row = mysqli_fetch_array($result)){
     ?>
 
-<tr>  <td><?= $row['id'] ?></td>
-    <td><?= $row['coursename'] ?></td>
-    <td><?= $row['course price'] ?></td>
-    <td><?= $row['lectures'] ?></td>
-   <td><?= $row['duration'] ?></td>
-   <td><?=$row['instructor'] ?></td>
- 
-    <td><img src="images/<?= $row['image'] ?>" width="100px" height="100px" alt=""></td>
-                                       
-                                      
-            
-                                         <td> <a  href ="courseedit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td>
-                                         <td> <a  href ="courseremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td>
-                                       </tr>
+<tr> 
+                                        <td><?php echo $row[0] ?></td>
+                                         <td><?php echo $row[1] ?></td>
+                                         <td><?php echo $row[2] ?></td>
+                                         <td><?php echo $row[3] ?></td>
+                                         <td><?php echo $row[4] ?></td>
+                                         <td><?php echo $row[5] ?></td>
+                        <td><img src="images/<?= $row['image'] ?>" width="100px" height="100px" alt=""></td>
+     <td> <a  href ="courseedit.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td>
+    <td> <a  href ="courseremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td>
+     </tr>
     
     <?php
    } }
@@ -211,21 +209,8 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                 </div>
          
 
-        <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
-     
+                </div> 
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
@@ -237,3 +222,9 @@ $conn = mysqli_connect("localhost","root","","ecourse");
     </body>
 </html>
 
+<!-- <td><?= $row['id'] ?></td>
+    <td><?= $row['coursename'] ?></td>
+    <td><?= $row['courseprice'] ?></td>
+    <td><?= $row['lectures'] ?></td>
+   <td><?= $row['duration'] ?></td>
+   <td><?=$row['instructor'] ?></td> -->

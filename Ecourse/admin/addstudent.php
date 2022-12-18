@@ -1,12 +1,12 @@
-<!DOCTYPE php>
-<php lang="en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Student table - SB Admin</title>
+        <title>Student add page - sb admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.php">E-courses Website</a>
+            <a class="navbar-brand ps-3" href="index.php">Education Systems</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -37,50 +37,92 @@
                 </li>
             </ul>
         </nav>
+        <br>
+                       <br>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                        
                             <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                               Teacher
-                            </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                               Students
-                            </a>
+                      
+                      
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                               Courses
+                            <a class="nav-link collapsed" href="./teacher.php" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                              Teacher
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link" href="charts.php">
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="./teacher.php">Teacher</a>
+                                  
+                                </nav>
+                            </div>
+                          
+                            <a class="nav-link collapsed" href="./student.php" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                         Student
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link" href="./student.php">STUDENTS</a>
+                                    </nav>
+                                </div>
+                                    
+                                  
+                            <a class="nav-link" href="course.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                COURSE
+                            </a>
+                            <a class="nav-link" href="tables.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                            <a class="nav-link" href="contact.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                               Contact
+                            </a>
+                            <a class="nav-link" href="Testimonial.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Testimonial
                             </a>
                         </div>
                     </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
+                    </div>
                 </nav>
             </div>
-
+          
+ 
             <div id="layoutSidenav_content">
             <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Student Register</h1>
                         
-            <form action="addstudent.php" method="POST">
-         <div class="form-group row">
-          <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Name</label>
-        <div class="col-sm-10">
-           <input type="text" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter Your Full name" name="txtname">
-        </div>
+   
+
+
+
+
+    <form action="addstudent.php" method="post">
+<div class="form-group row">
+<label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Name</label>
+<div class="col-sm-10">
+<input type="text" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter Your Full name" name="txtname">
 </div>
+</div>
+
+
+
 
 <div class="form-group row">
 <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Age</label>
@@ -90,7 +132,7 @@
 </div>
 
 <div class="form-group row">
-<label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Address</label>
+<label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Adress</label>
 <div class="col-sm-10">
 <input type="text" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter Your Address " name="txtadd">
 </div>
@@ -113,37 +155,66 @@
 </div>
 
 
+<!-- <div class="form-group row">
+<label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Image</label>
+<div class="col-sm-10">
+<input type="file" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter Your image " name="imagename">
+</div>
+</div> -->
+
 <button class="btn btn-primary" name="submit" type="submit">Submit</button>
 <a href="./student.php">showdata</a>
 </form>
-<?php
-error_reporting(0);
-$name = $_POST['txtname'];
-$age = $_POST['txtage'];
-$add = $_POST['txtadd'];
-$course = $_POST['txtcourse'];
-$email = $_POST['txtemail'];
 
-$conn = mysqli_connect("localhost","root","","ecourse");  
-if (!$conn) {
+<?php 
+error_reporting(0);
+ $name=$_POST['txtname'];
+$age=$_POST['txtage'];
+$add=$_POST['txtadd'];
+$course=$_POST['txtcourse'];
+$email=$_POST['txtemail'];
+// $imagename= $_FILES['image'] ["name"];
+// $imagetmp = $_FILES['image']['tmp_name'];
+
+// $path = "./images/". $imagename;
+
+// move_uploaded_file($imagetmp,$path);
+$conn = mysqli_connect("localhost","root","","ecourse");
+
+if(!$conn){
     echo "connection refuse";
 }
-$query = "insert into student values (null,'$name',$age,'$add','$course','$email')";
-$q = mysqli_query($conn,$query);
-if (!$conn) {
-    echo "not exectired";
-            
+
+$query ="INSERT INTO `student`(`id`,`name`,`age`,`add`,`course`,`email`) VALUES ('null','$name','$age','$add','$course','$email')";
+
+$q= mysqli_query($conn,$query);
+
+
+if(!$q){
+    echo "query not exectired!";
 }
 else{
-    echo "query sucess";
+    echo "query sucess!";
 }
 
-?>
 
- </div>
-</main>
-</div>
+// header('Location:showdata.php');
+?> 
+
+
+
+
+
+
+                        
+                    </div>
+          </main>
+           </div>
+           
+           
+       
         </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -152,4 +223,8 @@ else{
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
-</php>
+</html>
+
+
+                                        
+                                      

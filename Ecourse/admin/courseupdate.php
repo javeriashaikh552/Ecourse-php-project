@@ -1,25 +1,21 @@
 <?php
 $conn = mysqli_connect("localhost","root","","ecourse");
-if ($conn) {
+if ($conn){
     echo "connection refuse";
 }
 else{
     echo "connection established";
 }
 
-$coursename=$_POST['txtcourse name'];
-$courseprice=$_POST['txtcourse price'];
-$lectures=$_POST['txtlectures'];
-$duration=$_POST['txduration'];
 
-$instructor=$_POST['txtinstructor'];
-$image=$_POST['txtimage'];
+$id = $_POST['id'];
+$coursename = $_POST['txtcoursename'];
+$courseprice = $_POST['txtcourse price'];
+$lectures = $_POST['txtlectures'];
+$duration = $_POST['txtduration'];
+$instructor = $_POST['txtinstructor'];
 
-
-
-
-
-$query ="UPDATE `course` SET `coursename`='$coursename',`course price`='$courseprice',`lectures`='$lectures',`duration`='$duration',`instructor`='$instructor',`image`='$image' WHERE 1id='$id'";
+$query ="UPDATE `course` SET `coursename`='$coursename',`course price`='$course price',`lectures`='$lectures',`duration`='$duration',`instructor`='$instructor' WHERE id='$id'";
 $q =mysqli_query($conn,$query);
 if(!$q){
     echo "bye";
@@ -27,6 +23,10 @@ if(!$q){
 else{
     echo 'hi';
 
-    header('location:student.php');
+    header('location:course.php');
 }
 ?>
+
+<script>
+    window.location.assign("course.php");
+</script>

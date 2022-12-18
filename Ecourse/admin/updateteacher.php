@@ -7,14 +7,15 @@ else{
     echo "connection established";
 }
 
-$name =$_POST['txtname'];
-$subject =$_POST['txtsubject'];
+
+$id =$_POST['id'];
+$name =$_POST['name'];
+$subject =$_POST['subject'];
 $image= $_FILES['image'];
-$imagename= $_FILES['image'] ["name"];
-$imgtmp = $_FILES['img']['tmp_name'];
+$imagename = $image['name'];
+$tempimagename = $image['tmp_name'];
 
-$query ="UPDATE `teacher` SET  `name`='$name',`subject`='$subject',`image`='$image' WHERE  id='$id'";
-
+$query ="UPDATE `teacher` SET `name`='$name',`subject`='$subject',`image`='$imagename' WHERE   id='$id'";
 $q =mysqli_query($conn,$query);
 if(!$q){
     echo "bye";
@@ -22,6 +23,11 @@ if(!$q){
 else{
     echo 'hi';
 
-    // header('location:teacher.php');
+    header('location:teacher.php');
 }
 ?>
+
+
+<script>
+    window.location.assign("teacher.php");
+</script>

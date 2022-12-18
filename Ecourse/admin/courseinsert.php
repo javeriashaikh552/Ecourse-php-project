@@ -1,13 +1,16 @@
 <?php
- include('include/config.php');
-  $name = $_POST['name'];
-  $description = $_POST['description'];
-  $image= $_FILES['image'];
-  $imagename = $image['name'];
-  $tempiamgename = $image['tmp_name'];
+include('include/config.php');
+$coursename=$_POST['txtcoursename'];
+$courseprice=$_POST['txtcourse price'];
+$lectures=$_POST['txtlectures'];
+$duration=$_POST['txtduration'];
+$instructor=$_POST['txtinstructor'];
+$image= $_FILES['image'];
+$imagename = $image['name'];
+$tempiamgename = $image['tmp_name'];
 
   move_uploaded_file($tempiamgename,'images/'.$imagename.'');
-  mysqli_query($conn,"insert into testmonial1 values(null,'$name','$description','$imagename')");
+  mysqli_query($conn,"insert into course values('null','$coursename','$course price','$lectures','$duration','$instructor','$imagename')");
 
-  header('Location:testimonial.php');
+  header('Location:course.php');
 ?>

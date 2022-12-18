@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "ecourse"); 
+$conn = mysqli_connect("localhost","root","","ecourse"); 
 
 if (!$conn) {
     echo "connection refuse";
@@ -11,7 +11,7 @@ else {
 
     $id = $_GET["id"];
 
-    $query = "DELETE FROM `student` WHERE `id` = $id";
+    $query = "DELETE FROM `index` WHERE `id` = $id";
 
     mysqli_query($conn,$query);
 
@@ -20,7 +20,7 @@ else {
 ?>
 
 <script>
-    window.location.assign("student.php");
+    window.location.assign("index.php");
 </script>
 
 
@@ -35,7 +35,7 @@ else {
     echo "connection established";
 }
     $id = $_GET["id"];
-    $query = "DELETE FROM `userdetails` WHERE `id` = $id";
+    $query = "DELETE FROM `testmonial1` WHERE `id` = $id";
     mysqli_query($conn,$query);
     // header("Location: showData.php");    -->
 
