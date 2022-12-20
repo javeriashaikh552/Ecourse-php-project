@@ -47,20 +47,24 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+
+                            <a class="nav-link" href="teacher.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                               Teacher
-                            </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                               Students
+                                Teacher
                             </a>
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <a class="nav-link" href="student.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                             Student
+                            </a> 
+
+                            <a class="nav-link" href="course.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                               Courses
+                                Couses
                             </a>
-                            <a class="nav-link" href="charts.php">
+
+
+                            <a class="nav-link" href="testimonial.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Testimonial
                             </a>
@@ -74,7 +78,7 @@
                 <br>         
 
                                              
-<form action="addcourse.php" method="post" >
+<form action="courseinsert.php" method="post" >
 <div class="form-group row">
 <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">CourseName</label>
 <div class="col-sm-10">
@@ -86,7 +90,7 @@
 <div class="form-group row">
 <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">course price</label>
 <div class="col-sm-10">
-<input type="number" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter Your course price " name="txtcourse price">
+<input type="number" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter Your course price " name="txtprice">
 </div>
 </div>
 
@@ -116,11 +120,6 @@
 </div>
 </div>
 
-<div class="form-group row">
-<label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">image</label>
-<div class="col-sm-10">
-<input type="file" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter Your instructor " name="image">
-</div>
 
 
 <button class="btn btn-primary" name="submit" type="submit">Submit</button>
@@ -130,58 +129,48 @@
 </div>
     
 <?php 
-error_reporting(0);
-$coursename=$_POST['txtcoursename'];
-$courseprice=$_POST['txtcourse price'];
-$lectures=$_POST['txtlectures'];
-$duration=$_POST['txtduration'];
-$instructor=$_POST['txtinstructor'];
-$image= $_FILES['image'];
-$imagename = $image['name'];
-$tempimagename = $image['tmp_name'];
+// error_reporting(0);
+// $coursename=$_POST['txtcoursename'];
+// $courseprice=$_POST['txtcourse price'];
+// $lectures=$_POST['txtlectures'];
+// $duration=$_POST['txtduration'];
+// $instructor=$_POST['txtinstructor'];
+// $image= $_FILES['image'];
+// $imagename = $image['name'];
+// $tempimagename = $image['tmp_name'];
 // $path = "images/".$imagename;
 
 // move_uploaded_file($imagetmp,$path);
-move_uploaded_file($tempiamgename,'images/'.$imagename.'');
+// move_uploaded_file($tempiamgename,'images/'.$imagename.'');
 
-$conn = mysqli_connect("localhost","root","","ecourse");
+// $conn = mysqli_connect("localhost","root","","ecourse");
 
-if(!$conn){
-    echo "connection refuse";
-}
+// if(!$conn){
+//     echo "connection refuse";
+// }
 
-$query ="INSERT INTO `course`(`id`, `coursename`, `course price`, `lectures`, `duration`, `instructor`,`image`) VALUES ('null','$coursename','$course price','$lectures','$duration','$instructor','$imagename')";
+// $query ="INSERT INTO `course`(`id`, `coursename`, `course price`, `lectures`, `duration`, `instructor`,`image`) VALUES ('null','$coursename','$course price','$lectures','$duration','$instructor','$imagename')";
 
-$q= mysqli_query($conn,$query);
-
-
-if(!$q){
-    echo "query not exectired!";
-}
-else{
-    echo "query sucess!";
-}
+// $q= mysqli_query($conn,$query);
 
 
-header('Location:course.php');
+// if(!$q){
+//     echo "query not exectired!";
+// }
+// else{
+//     echo "query sucess!";
+// }
+
+
+// header('Location:course.php');
 ?> 
+                    </div>
 
 
                 </main>
                 
             </div>
-            <!-- <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer> -->
+          
                     </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

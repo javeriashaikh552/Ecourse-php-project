@@ -18,7 +18,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.php">Education Systems</a>
+            <a class="navbar-brand ps-3" href="index.php">E-courses Website</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -41,68 +41,41 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                 </li>
             </ul>
         </nav>
-        <br>
-                       <br>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                        
+                            <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                       
-                      
 
-                            <a class="nav-link collapsed" href="./teacher.php" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link" href="teacher.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                              Teacher
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                Teacher
                             </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="./teacher.php">Teacher</a>
-                                  
-                                </nav>
-                            </div>
-                          
-                            <a class="nav-link collapsed" href="./student.php" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                         Student
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="./student.php">STUDENTS</a>
-                                    </nav>
-                                </div>
-                                    
-                                  
+
+                            <a class="nav-link" href="student.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                             Student
+                            </a> 
+
                             <a class="nav-link" href="course.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Couses
+                            </a>
+
+
+                            <a class="nav-link" href="testimonial.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                COURSE
+                                Testimonial
                             </a>
-                            <a class="nav-link" href="tables.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
-                            </a>
-                            <a class="nav-link" href="contact.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                              Contact
-                            </a>
-                           
                         </div>
-                    </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
                     </div>
                 </nav>
             </div>
-          
      
         
 <div id="layoutSidenav_content">

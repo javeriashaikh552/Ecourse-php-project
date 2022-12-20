@@ -11,11 +11,11 @@ else{
 $id =$_POST['id'];
 $name =$_POST['name'];
 $subject =$_POST['subject'];
-$image= $_FILES['image'];
-$imagename = $image['name'];
-$tempimagename = $image['tmp_name'];
+// $image= $_FILES['image'];
+// $imagename = $image['name'];
+// $tempimagename = $image['tmp_name'];
 
-$query ="UPDATE `teacher` SET `name`='$name',`subject`='$subject',`image`='$imagename' WHERE   id='$id'";
+$query ="UPDATE `teacher` SET `name`='$name',`subject`='$subject' WHERE   id='$id'";
 $q =mysqli_query($conn,$query);
 if(!$q){
     echo "bye";

@@ -23,11 +23,11 @@ if(!$q){
 else{
     echo 'hi';
 
-    header('location:testmonial.php');
+    header('location:testimonial.php');
 }
 ?>
 
 
 <script>
-    window.location.assign("testmonial.php");
+    window.location.assign("testimonial.php");
 </script>

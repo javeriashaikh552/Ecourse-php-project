@@ -47,20 +47,24 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+
+                            <a class="nav-link" href="teacher.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                               Teacher
-                            </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                               Students
+                                Teacher
                             </a>
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <a class="nav-link" href="student.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                             Student
+                            </a> 
+
+                            <a class="nav-link" href="course.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                               Courses
+                                Couses
                             </a>
-                            <a class="nav-link" href="charts.php">
+
+
+                            <a class="nav-link" href="testimonial.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Testimonial
                             </a>

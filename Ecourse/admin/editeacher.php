@@ -53,10 +53,10 @@
                 <div class="col-sm-10">
                     <input type="subject"  value="<?= $row['subject'] ?>" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter your subject" name="subject">
                 </div>
-                <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">image</label>
+                <!-- <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">image</label>
                 <div class="col-sm-10">
                     <input type="file"  value="<?= $row['image'] ?>" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter your image" name="image">
-                </div>
+                </div> -->
                 
                 <br><br>
                 <input type="submit" class="btn btn-success">

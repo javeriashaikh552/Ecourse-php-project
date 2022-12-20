@@ -51,7 +51,7 @@
                
                 <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">course price</label>
                 <div class="col-sm-10">
-                    <input type="number"  value="<?= $row['courseprice'] ?>" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter your course price" name="txtcourseprice">
+                    <input type="number"  value="<?= $row['price'] ?>" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter your course price" name="txtprice">
                 </div>
                 <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">lectures</label>
                 <div class="col-sm-10">
@@ -72,10 +72,7 @@
 
 
 
-                <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">image</label>
-                <div class="col-sm-10">
-                    <input type="file"  value="<?= $row['image'] ?>" class="form-control form-control-sm" id="colFormLabel" placeholder=" Enter your image" name="image">
-                </div>
+              
 
 
                 <input type="submit" class="btn btn-success">
