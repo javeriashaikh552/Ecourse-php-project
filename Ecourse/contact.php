@@ -150,21 +150,21 @@
                 <div class="col-lg-8">
                     <div class="contact-form bg-secondary rounded p-5">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate" action="contact.php" method="POST">
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name" name="name" required="required" data-validation-required-message="Please enter your name" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email" name="email" required="required" data-validation-required-message="Please enter your email" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control border-0 p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" class="form-control border-0 p-4" id="subject" placeholder="Subject" name="subject" required="required" data-validation-required-message="Please enter a subject" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control border-0 py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <textarea class="form-control border-0 py-3 px-4" rows="5" id="message" placeholder="Message" name="message" required="required" data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="text-center">
@@ -176,6 +176,35 @@
             </div>
         </div>
     </div>
+<?php
+    error_reporting(0);
+$name=$_POST['name'];
+$email=$_POST['email'];
+$subject=$_POST['subject'];
+$message=$_POST['message'];
+
+$conn = mysqli_connect("localhost","root","","ecourse");
+
+if(!$conn){
+    echo "connection refuse";
+}
+
+$query ="INSERT INTO `contact`(`id`,`name`,`email`,`subject`,`message`) VALUES ('null','$name','$email','$subject','$message')";
+
+$q= mysqli_query($conn,$query);
+
+
+if(!$q){
+    echo "query not exectired!";
+}
+else{
+    echo "query sucess!";
+
+}
+header('Location:index.php');
+
+?>
+
     <!-- Contact End -->
 
 

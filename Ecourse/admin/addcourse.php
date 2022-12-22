@@ -60,13 +60,17 @@
 
                             <a class="nav-link" href="course.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Couses
+                                Courses
                             </a>
 
 
                             <a class="nav-link" href="testimonial.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Testimonial
+                            </a>
+                            <a class="nav-link" href="contact.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                contact
                             </a>
                         </div>
                     </div>

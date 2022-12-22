@@ -426,19 +426,21 @@
                                     <input type="text" name="txtname" class="form-control border-0 p-4" placeholder="Your name" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" name="txtemail" class="form-control border-0 p-4" placeholder="Your email" required="required" />
+                                    <input type="number" name="txtage" class="form-control border-0 p-4" placeholder="Your age" required="required" />
                                 </div>
+                                <div class="form-group">
+                                    <input type="text" name="txtadd" class="form-control border-0 p-4" placeholder="Your add" required="required" />
+                                </div>
+
                                 <div class="form-group">
                                     <input type="text" name="txtcourse" class="form-control border-0 p-4" placeholder="Your course" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Select a course</option>
-                                        <option value="1">Course 1</option>
-                                        <option value="2">Course 1</option>
-                                        <option value="3">Course 1</option>
-                                    </select>
+                                    <input type="email" name="txtemail" class="form-control border-0 p-4" placeholder="Your email" required="required" />
                                 </div>
+
+                               
+                               
                                 <div>
                                     <button class="btn btn-dark btn-block border-0 py-3" type="submit">Sign Up Now</button>
                                 </div>
@@ -454,8 +456,11 @@
 <?php 
 error_reporting(0);
 $name=$_POST['txtname'];
-$email=$_POST['txtemail'];
+$age=$_POST['txtage'];
+$add=$_POST['txtadd'];
 $course=$_POST['txtcourse'];
+$email=$_POST['txtemail'];
+
 
 $conn = mysqli_connect("localhost","root","","ecourse");
 
@@ -463,7 +468,7 @@ if(!$conn){
     echo "connection refuse";
 }
 
-$query ="INSERT INTO `index`(`id`,`name`,`email`,`course`) VALUES ('null','$name','$email','$course')";
+$query ="INSERT INTO `student`(`id`,`name`,`age`,`add`,`course`,`email`) VALUES ('null','$name','$age','$add','$course','$email')";
 
 $q= mysqli_query($conn,$query);
 
@@ -477,38 +482,6 @@ else{
 }
 header('Location:index.php');
 
-// header('Location:showdata.php');
-
-
-
-// if (isset($_POST["submit"])) {
-// session_start();    
-
-// $conn = mysqli_connect("localhost","root","","teacher");
-
-
-// $email = $_POST["email"];
-// $pass = $_POST["pass"];
-
-// $query =   "SELECT * FROM `user` WHERE  `email`='$email' AND `pass`='$pass'";
-
-// $result = mysqli_query($conn,$query);
-
-// if(mysqli_num_rows($result))
-// {
-//     while($data  = mysqli_fetch_assoc($result)){
-//             $_SESSION["name"]  = $data["name"];
-//             header("location: teacher.php");
-
-//     }
-// }
-// else{
-//     echo "invalid email or password";
-// }   
-
-
-
-// }
 
 ?>
     <!-- Registration End -->

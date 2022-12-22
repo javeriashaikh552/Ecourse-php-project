@@ -60,13 +60,17 @@
 
                             <a class="nav-link" href="course.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Couses
+                                Courses
                             </a>
 
 
                             <a class="nav-link" href="testimonial.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Testimonial
+                            </a>
+                            <a class="nav-link" href="contact.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                contact
                             </a>
                         </div>
                     </div>
@@ -77,6 +81,21 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Testimonial</h1>
                         <br>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                            <li class="breadcrumb-item active">testmonial</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                This page is an example of using the light side navigation option. By appending the
+                                <code>.sb-sidenav-light</code>
+                                class to the
+                                <code>.sb-sidenav</code>
+                                class, the side navigation will take on a light color scheme. The
+                                <code>.sb-sidenav-dark</code>
+                                is also available for a darker option.
+                            </div>
+                        </div>
                         <a class="btn btn-primary" href="./testimonialadd.php" role="button">Add New</a>
 <br> <br>
                         <div class="card mb-4">

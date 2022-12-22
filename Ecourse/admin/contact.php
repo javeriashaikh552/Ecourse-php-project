@@ -10,7 +10,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Teacher - sb admin</title>
+        <title> CONTACT</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -80,33 +80,32 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                     </div>
                 </nav>
             </div>
-     
-        
-<div id="layoutSidenav_content">
+            <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Teachers</h1>
+                        <h1 class="mt-4">CONTACT</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Teachers</li>
+                            <li class="breadcrumb-item active">contact</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque.
+                                This page is an example of using the light side navigation option. By appending the
                                 <code>.sb-sidenav-light</code>
                                 class to the
                                 <code>.sb-sidenav</code>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque.
+                                class, the side navigation will take on a light color scheme. The
                                 <code>.sb-sidenav-dark</code>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, doloremque.
+                                is also available for a darker option.
                             </div>
                         </div>
-                        <a class="btn btn-primary" href="./addteacher.php" role="button">Add New Teacher</a>
+                        <!-- <a class="btn btn-primary" href="./addstudent.php" role="button">Add New Student</a> -->
 <br>
 <br>
 <br>
+                   
                     </div>
-            <div class="card mb-4">
+                    <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
@@ -117,60 +116,73 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                         <tr>
                                         <th>id</th>
                                             <th>Name</th>
-                                              <th>subject</th>
-                                              <th>image</th>
+                                            <th>email</th>
+                                            <th>subject</th>
+                                              <th>Message</th>
+                                            <!-- <th>image</th> -->
+                                      
+
                                            
-                                              <th>Action</th>
+                                        
                                         </tr>
                                     </thead>
-
-
-
                                     <tfoot>
                                         <tr>
                                         <th>id</th>
                                             <th>Name</th>
-                                              <th>subject</th>
-                                              <th>image</th>
-                                              <th>Action</th>
-                                        <th>Action</th>
+                                            <th>email</th>
+                                            <th>subject</th>
+                                              <th>Message</th>
+                                            <!-- <th>image</th> -->
+                                           
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                     
- <?php
-  include('include/config.php');
-   $query="SELECT * from `teacher`";
-    $result = mysqli_query($conn,$query);
-    if(mysqli_num_rows($result)){
-    
-  while ($row = mysqli_fetch_array($result)){
-    ?>
-
-    <tr>
-    <td><?= $row['id'] ?></td>
-    <td><?= $row['name'] ?></td>
-    <td><?= $row['subject'] ?></td>
-    <td><img src="images/<?= $row['image'] ?>" width="100px" height="100px" alt=""></td>
-     
-      <td> <a  href ="editeacher.php?id=<?=$row['id']?>" class="btn btn-success">Edit</a></td> 
-     <td> <a  href ="Teacherremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td> 
-    </tr>
-    
-    <?php
-   } }
-  ?>
-    
-                                    </tbody>
+                                    <?php
+                                      $query="SELECT * from `contact`";
+                                       $result = mysqli_query($conn,$query);
+                                       if(mysqli_num_rows($result)){
+                                       
+                                     while ($row = mysqli_fetch_array($result)){
+                                       ?>
+                                   
+                                       <tr>
+                                         <td><?php echo $row[0] ?></td>
+                                         <td><?php echo $row[1] ?></td>
+                                         <td><?php echo $row[2] ?></td>
+                                         <td><?php echo $row[3] ?></td>
+                                         <td><?php echo $row[4] ?></td> 
+                                         <td> <a  href ="contactremove.php?id=<?=$row['id']?>" class="btn btn-danger">Delete</a></td> 
+                                       
+                                       </tr>
+                                       
+                                       <?php
+                                      } }
+                                     ?>
+                                       
+                                                                       </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </main>
                 </div>
-        </div> 
-
-
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
@@ -181,4 +193,3 @@ $conn = mysqli_connect("localhost","root","","ecourse");
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
-

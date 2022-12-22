@@ -66,13 +66,17 @@ $conn = mysqli_connect("localhost","root","","ecourse");
 
                             <a class="nav-link" href="course.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Couses
+                                Courses
                             </a>
 
 
                             <a class="nav-link" href="testimonial.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Testimonial
+                            </a>
+                            <a class="nav-link" href="contact.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                contact
                             </a>
                         </div>
                     </div>
@@ -92,10 +96,10 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                     <div class="card-body">Teacher</div>
                                     <span>
                                       <?php
-                                    $query="SELECT COUNT(*) AS 'count' FROM 'teacher'";
-                                    $result =mysqli_query($conn,$query);
-                                    $row =mysqli_fetch_assoc($result);
-                                    echo $count =$row['count'];
+                                    // $query="SELECT COUNT(*) AS 'count' FROM 'teacher'";
+                                    // $result =mysqli_query($conn,$query);
+                                    // $row =mysqli_fetch_assoc($result);
+                                    // echo $count =$row['count'];
                                     ?>
                                     </span>
                                     
@@ -110,6 +114,12 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">Student</div>
+                                    <?php
+                                    // $query="SELECT COUNT(*) AS 'count' FROM 'student'";
+                                    // $result =mysqli_query($conn,$query);
+                                    // $row = mysqli_fetch_assoc($result);
+                                    // echo $count = $row['count'];
+                                    ?>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="student.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
