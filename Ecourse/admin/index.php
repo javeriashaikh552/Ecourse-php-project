@@ -18,6 +18,16 @@ $conn = mysqli_connect("localhost","root","","ecourse");
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
+
+    <div class="container">
+        <div class="load">
+            <div class="start">
+                <!-- <img id="loader" class="ldd  " src="./loader gif/loader.gif" alt=""> -->
+                <a href="login.php"></a>
+            </div>
+        </div>
+    </div>
+
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.php">E-courses Website</a>
@@ -188,7 +198,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                         <th>id</th>
                                             <th>Name</th>
                                             <th>email</th>
-                                              <th>course</th>
+                                              <th>password</th>
                                              
                                            
                                         
@@ -202,7 +212,7 @@ $conn = mysqli_connect("localhost","root","","ecourse");
                                         <th>id</th>
                                             <th>Name</th>
                                             <th>email</th>
-                                              <th>course</th>
+                                              <th>password</th>
                                             
                                         </tr>
                                     </tfoot>

@@ -442,7 +442,7 @@
                                
                                
                                 <div>
-                                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Sign Up Now</button>
+                                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">submit</button>
                                 </div>
                             </form>
                         </div>
@@ -454,7 +454,7 @@
     
         
 <?php 
-error_reporting(0);
+// error_reporting(0);
 $name=$_POST['txtname'];
 $age=$_POST['txtage'];
 $add=$_POST['txtadd'];
@@ -480,10 +480,13 @@ else{
     echo "query sucess!";
 
 }
-header('Location:index.php');
+header('location:studentsucess.php');
 
 
 ?>
+<script>
+    //    window.location.assign("studentsucess.php");
+</script>
     <!-- Registration End -->
 
 

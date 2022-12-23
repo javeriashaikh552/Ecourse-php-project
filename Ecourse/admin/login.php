@@ -20,13 +20,6 @@ if($_SESSION["status"] == ""){
 <body>
 
 
-
-
-
-
-
-
-
 <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mb-5">
@@ -38,10 +31,10 @@ if($_SESSION["status"] == ""){
                     <div class="contact-form bg-secondary rounded p-5">
                         <div id="success"></div>
                         <form name="sentMessage" id="contactForm" novalidate="novalidate" action="index.php" method="POST">
-                            <div class="control-group">
+                            <!-- <div class="control-group">
                                 <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name" name="name" required="required" data-validation-required-message="Please enter your name" />
                                 <p class="help-block text-danger"></p>
-                            </div>
+                            </div> -->
                             <div class="control-group">
                                 <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email" name="email" required="required" data-validation-required-message="Please enter your email" />
                                 <p class="help-block text-danger"></p>
@@ -64,12 +57,6 @@ if($_SESSION["status"] == ""){
 
 
 
-
-
-
-
-
-
 <?php
 include_once("conn.php");
 
@@ -84,14 +71,13 @@ if(isset($_REQUEST["submit"])){
     $result = mysqli_query($conn,$query);
     if(mysqli_num_rows($result)){
         while ($row = mysqli_fetch_array($result)){
-            if($row[5] == 1){
                 $_SESSION["name"] = $row [1];
-                $_SESSION["status"] = $row [0];
+                $_SESSION["status"] = $row [5];
 
             
 
 
-            }
+            
         }
     }
 
